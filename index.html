@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teja Studio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c2c2c;
+            background-color: #f5e6ca;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('teja-studio-high-resolution-logo-black.JPEG') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 30px 10px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        section h2 {
+            font-size: 2rem;
+            color: #444;
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #ff4500;
+            margin: 10px auto 20px;
+        }
+        section p {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Lightbox Styles */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        #lightbox:target {
+            display: flex;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #333;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        #contact .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 1rem;
+            color: white;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        #contact .button:hover {
+            background-color: #e03e00;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            background: #222;
+            color: white;
+            padding: 15px;
+            margin-top: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>Welcome to Teja Studio</h1>
+    </div>
+</header>
+
+<section id="portraits">
+    <h2>Portraits</h2>
+    <p>Discover the beauty of timeless portraits that highlight individual charm and personality. Our portrait sessions offer a blend of creativity and elegance.</p>
+    <div class="gallery">
+        <!-- 14 Portrait Images -->
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/IMG_0425_TIF.JPG')">
+            <img src="Photos/portraits/IMG_0425_TIF.JPG" alt="Portrait Photo 1">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Teja_Studio/TEJ05048.JPG')">
+            <img src="Teja_Studio/TEJ05048.JPG" alt="Portrait Photo 2">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/IMG_0332.JPG')">
+            <img src="Photos/portraits/IMG_0332.JPG" alt="Portrait Photo 3">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ00288.JPEG')">
+            <img src="Photos/portraits/TEJ00288.JPEG" alt="Portrait Photo 4">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ00289.JPEG')">
+            <img src="Photos/portraits/TEJ00289.JPEG" alt="Portrait Photo 5">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ00290.JPEG')">
+            <img src="Photos/portraits/TEJ00290.JPEG" alt="Portrait Photo 6">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ00293.JPEG')">
+            <img src="Photos/portraits/TEJ00293.JPEG" alt="Portrait Photo 7">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ01329.JPEG')">
+            <img src="Photos/portraits/TEJ01329.JPEG" alt="Portrait Photo 8">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ04564.JPEG')">
+            <img src="Photos/portraits/TEJ04564.JPEG" alt="Portrait Photo 9">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ04568.JPEG')">
+            <img src="Photos/portraits/TEJ04568.JPEG" alt="Portrait Photo 10">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ06043.JPEG')">
+            <img src="Photos/portraits/TEJ06043.JPEG" alt="Portrait Photo 11">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Photos/portraits/TEJ06044.JPEG')">
+            <img src="Photos/portraits/TEJ06044.JPEG" alt="Portrait Photo 12">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/IMG_0217_TIF.JPG')">
+            <img src="Photos/portraits/IMG_0217_TIF.JPG" alt="Portrait Photo 13">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/IMG_0134_TIF.JPG')">
+            <img src="Photos/portraits/IMG_0134_TIF.JPG" alt="Portrait Photo 14">
+        </a>
+        
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ06072.JPEG')">
+            <img src="Photos/portraits/TEJ06072.JPEG" alt="Portrait Photo 15">
+        </a>
+        
+        <a href="#lightbox" onclick="openLightbox(Photos/portraits/TEJ05048.JPG')">
+            <img src="Photos/portraits/TEJ05048.JPG" alt="Portrait Photo 16">
+        </a>
+        
+        <a href="#lightbox" onclick="openLightbox(Photos/portraits/TEJ03639.JPG')">
+            <img src="Photos/portraits/TEJ03639.JPG" alt="Portrait Photo 17">
+        </a>
+        
+        <a href="#lightbox" onclick="openLightbox('Photos/portraits/TEJ04692.JPG')">
+            <img src="Photos/portraits/TEJ04692.JPG" alt="Portrait Photo 18">
+        </a>
+    </div>
+</section>
+<section id="graduation">
+    <h2>Graduation</h2>
+    <p>Celebrate academic milestones with vibrant and joyful photographs. Let us capture your achievements in a way you'll treasure forever.</p>
+    <div class="gallery">
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01693.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01693.JPEG" alt="Graduation Photo 1">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01725.JPG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01725.JPG" alt="Graduation Photo 2">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01698.JPG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01698.JPG" alt="Graduation Photo 3">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01710.JPG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01710.JPG" alt="Graduation Photo 4">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01834.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01834.JPEG" alt="Graduation Photo 5">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01658.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01658.JPEG" alt="Graduation Photo 6">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03035.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03035.JPEG" alt="Graduation Photo 7">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ02099.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ02099.JPEG" alt="Graduation Photo 8">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01880.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01880.JPEG" alt="Graduation Photo 9">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ02042.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ02042.JPEG" alt="Graduation Photo 10">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03247.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03247.JPEG" alt="Graduation Photo 11">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03116.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03116.JPEG" alt="Graduation Photo 12">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03192.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03192.JPEG" alt="Graduation Photo 13">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01856.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ01856.JPEG" alt="Graduation Photo 14">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03210.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03210.JPEG" alt="Graduation Photo 15">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03121.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03121.JPEG" alt="Graduation Photo 16">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ02815.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ02815.JPEG" alt="Graduation Photo 17">
+        </a>
+        <a href="#lightbox" onclick="openLightbox('/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03048.JPEG')">
+            <img src="/Users/tarunteja/Desktop/Web/Photos/graduation/TEJ03048.JPEG" alt="Graduation Photo 18">
+        </a>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Information</h2>
+    <a href="tel:+14128054007" class="button">Call: +1 412-805-4007</a>
+    <a href="#" class="button">Tarun Teja</a>
+    <a href="https://www.instagram.com/_teja_studio_/profilecard/?igsh=MTB6bjNnZW5keWJkOA==" target="_blank" class="button">Follow on Instagram</a>
+</section>
+
+
+<footer>
+    <p>©Teja Studio. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function openLightbox(imageSrc) {
+        document.getElementById('lightbox-img').src = imageSrc;
+    }
+
+    // Close lightbox on click outside
+    document.getElementById('lightbox').addEventListener('click', function (event) {
+        if (event.target.id === 'lightbox') {
+            document.getElementById('lightbox-img').src = '';
+            window.location.hash = '';
+        }
+    });
+</script>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <img id="lightbox-img" src="" alt="Expanded Image">
+</div>
+
+</body>
+</html>
+
